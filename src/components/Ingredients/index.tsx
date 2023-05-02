@@ -1,20 +1,40 @@
-import { Quantityinput } from "../QuantityInput";
-import { IngredientsContainer, IngredientsContent, Ingredients } from "./styles";
+import { useState } from 'react'
+import { Quantityinput } from '../QuantityInput'
 
-export function IngredientsMenu() {
-  return(
-    <IngredientsContainer>
-    <IngredientsContent>
-      <Ingredients>
-        <h3>Queijo cheddar</h3>
-        <span>+ R$4,99</span>
-      </Ingredients>
+import * as C from './styles'
 
-      <div>
-        <Quantityinput />
-      </div>
-    </IngredientsContent>
-    <hr color="#E8A634" />
-  </IngredientsContainer>
+interface IngredientsMenuProps {
+  text: string
+  price: string
+}
+
+export function IngredientsMenu({ text, price }: IngredientsMenuProps) {
+  const [quantity, setQuantity] = useState(0)
+
+  function handleIncrease() {
+    setQuantity(state => state + 1)
+  }
+
+  function handleDecrease() {
+    setQuantity(state => state - 1)
+  }
+  return (
+    <C.IngredientsContainer>
+      <C.IngredientsContent>
+        <C.Ingredients>
+          <h3>{text}</h3>
+          <span>+ R$ {price}</span>
+        </C.Ingredients>
+
+        <div>
+          <Quantityinput
+            onIncrease={handleIncrease}
+            onDecrease={handleDecrease}
+            quantity={quantity}
+          />
+        </div>
+      </C.IngredientsContent>
+      <hr color="#E8A634" />
+    </C.IngredientsContainer>
   )
 }

@@ -27,7 +27,6 @@ export const Image = styled.img`
   @media (min-width: 1024px) {
     margin: 0;
   }
-
 `
 
 export const Arrow = styled.div`
@@ -116,4 +115,22 @@ export const Cart = styled.div`
   gap: 1rem;
   align-items: center;
   color: ${({ theme }) => theme.colors['brand-red-dark']};
+
+  @media (min-width: 1024px) {
+    > span {
+      position: absolute;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      top: calc(1rem / 2);
+      right: calc(10.9rem / 2);
+      background: ${({ theme }) => theme.colors['brand-orange-dark']};
+      color: ${({ theme }) => theme.colors['base-white']};
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: ${({ theme }) => theme.textSizes['text-bold-s']};
+      font-weight: 400;
+    }
+  }
 `

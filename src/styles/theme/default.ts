@@ -28,7 +28,7 @@ export const defaultTheme = {
     "text-regular-m": "1rem",
     "text-bold-m": "1rem",
     "text-regular-s": "0.875rem",
-    "text-bold-s": "0.75rem",
+    "text-bold-s": "0.6rem",
     "text-regular-description":"1rem",
     "text-desktop-m":"1,75rem",
   },
