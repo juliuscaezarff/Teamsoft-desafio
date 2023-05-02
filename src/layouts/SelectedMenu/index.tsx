@@ -5,16 +5,28 @@ import { Quantityinput } from '../../components/QuantityInput'
 import * as C from './styles'
 
 export function Selectedmenu() {
-const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(0)
 
-function handleIncrease() {
-  setQuantity(state => state + 1)
-}
+  function handleIncrease() {
+    setQuantity(state => state + 1)
+  }
 
-function handleDecrease() {
-  setQuantity(state => state - 1)
-}
+  function handleDecrease() {
+    setQuantity(state => state - 1)
+  }
 
+  const [isChecked1, setIsChecked1] = useState(false)
+  const [isChecked2, setIsChecked2] = useState(false)
+
+  function handleCheckbox1Change() {
+    setIsChecked1(!isChecked1)
+    setIsChecked2(false)
+  }
+
+  function handleCheckbox2Change() {
+    setIsChecked2(!isChecked2)
+    setIsChecked1(false)
+  }
 
   return (
     <C.SelectedMenu>
@@ -40,13 +52,25 @@ function handleDecrease() {
           </div>
 
           <C.Checkbox>
-            <input type="checkbox" />
-            <input type="checkbox" />
+            <label>
+              <C.InputCheckbox
+                type="checkbox"
+                checked={isChecked1}
+                onChange={handleCheckbox1Change}
+              />
+            </label>
+            <label>
+              <C.InputCheckbox
+                type="checkbox"
+                checked={isChecked2}
+                onChange={handleCheckbox2Change}
+              />
+            </label>
           </C.Checkbox>
         </C.Options>
 
         <C.AddToCart>
-          <Quantityinput 
+          <Quantityinput
             onIncrease={handleIncrease}
             onDecrease={handleDecrease}
             quantity={quantity}

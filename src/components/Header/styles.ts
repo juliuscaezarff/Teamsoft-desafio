@@ -89,6 +89,7 @@ export const HeaderInput = styled.div`
     > input {
       width: 12rem;
       height: 100%;
+      padding: 0.3rem;
       border-radius: 0.25rem;
       border: 1px solid ${({ theme }) => theme.colors['base-white']};
 

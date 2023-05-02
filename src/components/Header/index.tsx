@@ -37,7 +37,6 @@ export function Header() {
           </C.User>
 
           <C.Cart>
-            <span>1</span>
             <PopoverContainer />
             <p>Carrinho</p>
           </C.Cart>

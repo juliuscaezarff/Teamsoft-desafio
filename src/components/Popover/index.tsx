@@ -6,6 +6,7 @@ export function PopoverContainer() {
   return (
     <Popover.Root>
       <PopoverIcon>
+        <span>1</span>
       <ShoppingCart size={24} weight='bold' />
       </PopoverIcon>
       <Popover.Portal>

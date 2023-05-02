@@ -12,7 +12,6 @@ export const SelectedMenu = styled.div`
 `
 
 export const SelectedContent = styled.div`
-
   @media (min-width: 1024px) {
     padding: 2rem;
   }
@@ -47,16 +46,27 @@ export const Checkbox = styled.div`
   flex-direction: column;
   gap: 0.4rem;
 
-  > input[type='checkbox'] {
-    appearance: none;
-    border-radius: 50%;
-    border: 1px solid ${({ theme }) => theme.colors['brand-orange']};
-    width: 1rem;
-    height: 1rem;
-  }
+  /* > label {
+    > input[type='checkbox'] {
+    }
 
-  > input[type='checkbox']:checked {
-    background: ${({ theme }) => theme.colors['brand-orange']};
+    > input [type='checkbox']:checked {
+      background: ${({ theme }) => theme.colors['brand-orange']};
+      border: none;
+    }
+  } */
+`
+
+export const InputCheckbox = styled.input.attrs({ type: 'checkbox' })`
+  appearance: none;
+  border-radius: 50%;
+  border: 1px solid ${({ theme }) => theme.colors['brand-orange']};
+  width: 1rem;
+  height: 1rem;
+
+  &:checked {
+    background-color: orange;
+    /* Remover borda */
     border: none;
   }
 `
